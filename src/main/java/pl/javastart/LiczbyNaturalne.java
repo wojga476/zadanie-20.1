@@ -5,20 +5,16 @@ import java.util.List;
 
 public class LiczbyNaturalne {
 
-    public static void main(String[] args) {
-        LiczbyNaturalne liczbyNaturalne = new LiczbyNaturalne();
-        List<Integer> lista = liczbyNaturalne.wielokrotnosci3i5(1000);
-        System.out.println(lista);
-    }
+        public int multiCalc(int maxNumber){
 
-    public List<Integer> wielokrotnosci3i5(int liczba) {
-        ArrayList<Integer> liczby = new ArrayList<>();
-        for (int i =1 ; i<liczba; i++){
-            if (i%5==0 && i%3==0){
-                liczby.add(i);
+            int sum=0;
+
+            for(int i=0; i<maxNumber; i++){
+                if(i%3==0 || i%5==0){
+                    sum+=i;
+                }
             }
-        }
 
-        return liczby;
-    }
+            return sum;
+        }
 }

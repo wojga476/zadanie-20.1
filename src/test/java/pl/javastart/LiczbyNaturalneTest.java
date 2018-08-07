@@ -1,27 +1,41 @@
 package pl.javastart;
 
-import org.hamcrest.CoreMatchers;
+import org.junit.Before;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 public class LiczbyNaturalneTest {
 
-    @Test
-    public void shouldBe23(){
+    private LiczbyNaturalne liczbyNaturalne;
 
-        LiczbyNaturalne liczbyNaturalne = new LiczbyNaturalne();
-        int liczba = 10;
-
-        List<Integer> lista = new ArrayList<>();
-        lista = liczbyNaturalne.wielokrotnosci3i5(liczba);
-        int sumaLiczb = 0;
-        for(Integer integer: lista){
-            sumaLiczb += integer;
-        }
-        assertThat(sumaLiczb, CoreMatchers.is(23));
+    @Before
+    public void init(){
+        liczbyNaturalne = new LiczbyNaturalne();
     }
+
+    @Test
+    public void shouldReturnFor6(){
+        //given
+        int a = 6;
+
+        //when
+        int result = liczbyNaturalne.multiCalc(a);
+
+        //then
+        assertThat(result, is(8));
+    }
+
+    @Test
+public void shouldReturnFor20(){
+    //given
+    int a = 20;
+
+    //when
+    int result = liczbyNaturalne.multiCalc(a);
+
+    //then
+    assertThat(result, is(78));
+}
+
 }
